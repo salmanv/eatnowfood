@@ -1,6 +1,7 @@
-<h1>Listing restaurants</h1>
+<h1> All Open Restaurants</h1>
+<div class='time'> <%= Time.now %> </div>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -8,9 +9,6 @@
       <th>Description</th>
       <th>Open time</th>
       <th>Close time</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -22,14 +20,15 @@
         <td><%= restaurant.description %></td>
         <td><%= restaurant.open_time %></td>
         <td><%= restaurant.close_time %></td>
-        <td><%= link_to 'Show', restaurant %></td>
+        <td><%= link_to 'Show', restaurant, class: "btn-large btn-success" %></td>
+         </tr>
         <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
         <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Restaurant', new_restaurant_path %>
+<%= link_to 'New Restaurant', new_restaurant_path,class: "btn-large btn-primary" %>
