@@ -41,16 +41,21 @@ div {
 }
 }
 
+
 /* time */
 
 .time{
-	background-size: 10px;
+	font-size: 25px;
+	// background-size: 10px;
 	background-color: red;
-	float: left;
+	margin-left: 5cm;
 	font-weight: bold;
 }
 
+.field {
+	margin-left: 1cm;
 
+}
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -138,7 +143,9 @@ footer ul li {
 }
 
  .showtable{
-	padding-top: 65px;
+ 	border: 6px solid;
+ 	margin-top: 3cm;
+
 	margin-right: 360px;
 	
 

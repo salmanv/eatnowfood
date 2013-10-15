@@ -31,6 +31,15 @@
     <%= f.label :close_time %><br>
     <%= f.number_field :close_time %>
   </div>
+  <div class="field">
+    <%= f.label :longitude %><br>
+     <%= f.number_field :longitude, :class => 'text_field', :step => 'any' %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br>
+    <%= f.number_field :latitude, :class => 'text_field', :step => 'any' %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
