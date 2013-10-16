@@ -10,6 +10,9 @@
     <tr>
       <th>Name</th>
       <th>Address</th>
+      <th>city</th>
+      <th>province</th>
+      <th>country</th>
       <th>Description</th>
       <th>Open time</th>
       <th>Close time</th>
@@ -22,6 +25,9 @@
       <tr>
         <td><%= @restaurant.name %></td>
         <td><%= @restaurant.address %></td>
+        <td><%= @restaurant.city %></td>
+        <td><%= @restaurant.province %></td>
+        <td><%= @restaurant.country %></td>
         <td><%= @restaurant.description %></td>
         <td><%= @restaurant.open_time %></td>
         <td><%= @restaurant.close_time %></td>   
@@ -33,7 +39,12 @@
 </table>
 
 <div>
+
+
+
   <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>
 </div>
 </div>
+
+ <%= gmaps4rails(@json) %>

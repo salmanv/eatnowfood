@@ -7,7 +7,7 @@ gem 'bootstrap-sass'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'geocoder'
-
+gem 'gmaps4rails'
 
 # authentication gem 
 gem 'omniauth'

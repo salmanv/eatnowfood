@@ -4,13 +4,15 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.search(params[:search])
+    @json = Restaurant.search(params[:search]).to_gmaps4rails
   end
 
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
-    @restaurant = Restaurant.find(set_restaurant)
+    @restaurant = Restaurant.find(params[:id])
+    @json = Restaurant.find(params[:id]).to_gmaps4rails
   end
 
   # GET /restaurants/new
@@ -70,6 +72,6 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :address, :description, :open_time, :close_time, :longitude, :latitude)
+      params.require(:restaurant).permit(:name, :address, :city, :province, :country, :description, :open_time, :close_time, :longitude, :latitude)
     end
 end
