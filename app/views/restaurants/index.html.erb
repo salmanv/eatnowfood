@@ -1,16 +1,16 @@
 <h1> All Open Restaurants</h1>
-<div class='time'> <%= Time.now %> </div>
+<div class='time'> <%= Time.now.strftime('%A, %b %d, %I:%M %p') %> </div>
 
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Address</th>
-      <th>Description</th>
+      <!-- <th>Address</th> -->
+      <!-- <th>Description</th> -->
       <th>Open time</th>
       <th>Close time</th>
-      <th>Long.</th>
-      <th>Lat.</th>
+      <!-- <th>Long.</th> -->
+      <!-- <th>Lat.</th> -->
     </tr>
   </thead>
 
@@ -18,12 +18,12 @@
     <% @restaurants.each do |restaurant| %>
       <tr>
         <td><%= restaurant.name %></td>
-        <td><%= restaurant.address %></td>
-        <td><%= restaurant.description %></td>
+        <!-- <td><%= restaurant.address %></td> -->
+        <!-- <td><%= restaurant.description %></td> -->
         <td><%= restaurant.open_time %></td>
         <td><%= restaurant.close_time %></td>
-        <td><%= restaurant.longitude %></td>
-        <td><%= restaurant.latitude %></td>
+        <!-- <td><%= restaurant.longitude %></td> -->
+        <!-- <td><%= restaurant.latitude %></td> -->
         <td><%= link_to 'Show', restaurant, class: "btn-large btn-success" %></td>
          </tr>
         <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
