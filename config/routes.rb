@@ -1,10 +1,13 @@
 Eatnowfood::Application.routes.draw do
+  resources :visitors
+
 root :to => 'restaurants#index'
 
 resources :users
   get "sessions/create"
   get "sessions/destroy"
   resources :restaurants
+  get "findrest" => "restaurants#find_restaurants"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -36,7 +36,10 @@
 <br>
 <%= yield :scripts %>
 <%= link_to 'New Restaurant', new_restaurant_path,class: "btn-large btn-primary" %>
+<div>
+<%= gmaps(:map_options => {:detect_location => true, :center_on_user => true, :auto_zoom => false, :zoom => 12, :auto_adjust => true}, :markers => {:data => @json} ) %>
 
+</div>
 
 
  

@@ -1,0 +1,57 @@
+<br>
+<br>
+<br>
+<br>
+<%= @response["businesses"][0].keys %>
+<br>
+<br>
+<br>
+<%= @response["businesses"][9]["location"]["display_address"][0]%>
+<br>
+<%= @response["businesses"][9]["location"]["display_address"][1]%>
+<br>
+<%= @response["businesses"][9]["location"]["display_address"][2]%>
+<br>
+<%= @response["businesses"][9]["location"]["display_address"][3]%>
+<br>
+<%= @response["businesses"][9]["location"]["display_address"][4]%>
+<br>
+<br>
+<br>
+<%= @response["businesses"][2]["location"]["display_address"][0]%>
+<br>
+<%= @response["businesses"][2]["location"]["display_address"][1]%>
+<br>
+<%= @response["businesses"][2]["location"]["display_address"][2]%>
+<br>
+<%= @response["businesses"][2]["location"]["display_address"][3]%>
+<br>
+<%= @response["businesses"][2]["location"]["display_address"][4]%>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<% @response["businesses"].each do |business| %>
+<address>
+	<h3><%= business["name"] %></h3>
+	<span class="phone"><%= business["phone"] %></span><br>
+	<% business["location"]["display_address"].each do |x| %>
+		<span><%= x %></span><br>
+	<% end %>
+</address>
+<br>
+<br>
+
+	
+
+<br>
+<br>
+<br>
+<br>
+
+	<% end %>
+	
+["is_claimed", "distance", "mobile_url", "rating_img_url", "review_count", "name", "snippet_image_url", "rating", "url", "location", "phone", "snippet_text", "image_url", "categories", "display_phone", "rating_img_url_large", "id", "is_closed", "rating_img_url_small"] 

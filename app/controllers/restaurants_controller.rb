@@ -1,3 +1,5 @@
+include Yelp::V2::Search::Request
+
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
@@ -30,6 +32,7 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new(restaurant_params)
 
     respond_to do |format|
+
       if @restaurant.save
         format.html { redirect_to @restaurant, notice: 'Restaurant was successfully created.' }
         format.json { render action: 'show', status: :created, location: @restaurant }
@@ -62,6 +65,18 @@ class RestaurantsController < ApplicationController
       format.html { redirect_to restaurants_url }
       format.json { head :no_content }
     end
+  end
+
+  def find_restaurants
+    client = Yelp::Client.new
+
+    request = GeoPoint.new(
+             :term => "cream puffs",
+             :latitude => 43.6481797,
+             :longitude => -79.3887629)
+
+    @response = client.search(request)
+    
   end
 
   private

@@ -48,7 +48,7 @@
       this.default_map_options = {
         id: 'map',
         draggable: true,
-        detect_location: false,
+        detect_location: true,
         center_on_user: false,
         center_latitude: 0,
         center_longitude: 0,
