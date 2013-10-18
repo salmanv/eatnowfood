@@ -1,7 +1,8 @@
-include Yelp::V2::Search::Request
-
 class RestaurantsController < ApplicationController
-  before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+  include Yelp::V2::Search::Request
+  include Yelp::V2::Business::Request
+
+  before_action :set_restaurant, only: [ :edit, :update, :destroy]
 
   # GET /restaurants
   # GET /restaurants.json
@@ -13,8 +14,15 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
-    @restaurant = Restaurant.find(params[:id])
-    @json = Restaurant.find(params[:id]).to_gmaps4rails
+    client = Yelp::Client.new
+
+    # @restaurant = Restaurant.find(params[:id])
+    # @json = Restaurant.find(17).to_gmaps4rails
+
+    request = Id.new(:yelp_business_id => params[:id])
+    @response = client.search(request)
+
+    @coordinates = Geocoder.search(@response["location"]["display_address"].join(", ")).first.data
   end
 
   # GET /restaurants/new
@@ -68,15 +76,27 @@ class RestaurantsController < ApplicationController
   end
 
   def find_restaurants
+    @location = request.location
+    # latitude = @location.latitude
+    # longitude = @location.longitude
+
+    latitude = 43.6481797
+    longitude = -79.3887629
     client = Yelp::Client.new
 
+    # FOR DEMO ONLY
+    # request = GeoPoint.new(
+    #          :term => "food",
+    #          :latitude =>  43.6481797,#params[:latitude],
+    #          :longitude => -79.3887629) #params[:longitude]
+
     request = GeoPoint.new(
-             :term => "cream puffs",
-             :latitude => 43.6481797,
-             :longitude => -79.3887629)
+             :term => "food",
+             :latitude =>  latitude,
+             :longitude => longitude) 
 
     @response = client.search(request)
-    
+
   end
 
   private
@@ -90,3 +110,11 @@ class RestaurantsController < ApplicationController
       params.require(:restaurant).permit(:name, :address, :city, :province, :country, :description, :open_time, :close_time, :longitude, :latitude)
     end
 end
+#     def geolocation_params
+#       params.require(:search).permit(:longitude, :latitude)
+# end
+
+
+
+
+

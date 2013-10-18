@@ -18,6 +18,7 @@ html {
 
 body {
 	padding-top: 60 px;
+	
 }
 
 section {
@@ -40,6 +41,8 @@ div {
 
 }
 }
+
+
 // .navbar-inner{
 // 	max-height: 12px;
 //   padding-right: 20px;
@@ -62,31 +65,51 @@ div {
 //           box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
 
 // }
+// .navbar-inner{
+// 	min-height: 50px;
+// 	max-height: 50px;
+//   padding-right: 20px;
+//   padding-left: 20px;
+//   background-color: #fafafa;
+// background-image: linear-gradient(bottom, rgb(233,238,203) 3%, rgb(255,255,244) 52%, rgb(0,250,250) 76%);
+// background-image: -o-linear-gradient(bottom, rgb(233,238,203) 3%, rgb(255,255,244) 52%, rgb(0,250,250) 76%);
+// background-image: -moz-linear-gradient(bottom, rgb(233,238,203) 3%, rgb(255,255,244) 52%, rgb(0,250,250) 76%);
+// background-image: -webkit-linear-gradient(bottom, rgb(233,238,203) 3%, rgb(255,255,244) 52%, rgb(0,250,250) 76%);
+// background-image: -ms-linear-gradient(bottom, rgb(233,238,203) 3%, rgb(255,255,244) 52%, rgb(0,250,250) 76%);
+// background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.03, rgb(233,238,203)),color-stop(0.52, rgb(255,255,244)),color-stop(0.76, rgb(0,250,250))
+// );
+// }
+
 .navbar-inner{
-	max-height: 10px;
+	position: relative;
+	min-height: 50px;
+	max-height: 50px;
   padding-right: 20px;
   padding-left: 20px;
   background-color: #fafafa;
-background-image: linear-gradient(bottom, rgb(233,238,203) 3%, rgb(255,255,244) 52%, rgb(0,250,250) 76%);
-background-image: -o-linear-gradient(bottom, rgb(233,238,203) 3%, rgb(255,255,244) 52%, rgb(0,250,250) 76%);
-background-image: -moz-linear-gradient(bottom, rgb(233,238,203) 3%, rgb(255,255,244) 52%, rgb(0,250,250) 76%);
-background-image: -webkit-linear-gradient(bottom, rgb(233,238,203) 3%, rgb(255,255,244) 52%, rgb(0,250,250) 76%);
-background-image: -ms-linear-gradient(bottom, rgb(233,238,203) 3%, rgb(255,255,244) 52%, rgb(0,250,250) 76%);
-
-background-image: -webkit-gradient(
-	linear,
-	left bottom,
-	left top,
-	color-stop(0.03, rgb(233,238,203)),
-	color-stop(0.52, rgb(255,255,244)),
-	color-stop(0.76, rgb(0,250,250))
-);
+background-image: -ms-radial-gradient(center, circle farthest-corner, #FF8300 0%, #A1102D 100%);
+background-image: -moz-radial-gradient(center, circle farthest-corner, #FF8300 0%, #A1102D 100%);
+background-image: -o-radial-gradient(center, circle farthest-corner, #FF8300 0%, #A1102D 100%);
+background-image: -webkit-gradient(radial, center center, 0, center center, 493, color-stop(0, #FF8300), color-stop(1, #A1102D));
+background-image: -webkit-radial-gradient(center, circle farthest-corner, #FF8300 0%, #A1102D 100%);
+background-image: radial-gradient(circle farthest-corner at center, #FF8300 0%, #A1102D 100%);
 }
-.fbook{
-	background-color: white;
 
+a#sign_in{
+	color: white;
+	background-color: #3B5998;
+	font-size: 26px;
+	margin-right: auto;
+	margin-left: auto;
 
+}
 
+.searchbtn
+{
+  margin-left: 40%;
+  margin-top: 5%;
+  position: relative;
+  font-size: 55px;
 }
 
 .map_container{
@@ -94,14 +117,29 @@ background-image: -webkit-gradient(
 }
 
 /* time */
+.list-table{
+	max-width: 850px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #ffffff;
+  border: 1px solid black;
+  opacity:0.8;
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+}
 
+a#listbutton{
+	position: relative;
+	top: 35px;
+	margin-top: 15px;
+	font-size: 18.5px;
+}
 .time{
-	font-size: 28px;
-	// background-color: #20e6e6;
-	// margin-left: 10cm;
-	// margin-right: 15cm;
-	// font-weight: bold;
-	text-align: center;
+	font-size: 44px;
+	margin-left: 35%;
+	margin-top: 4%;
+	margin-bottom: 3%;
+	color: red;
+
 }
 
 .field {	
@@ -149,14 +187,18 @@ p {
 	line-height: 1;
 }
 #logo:hover{
-	color: #fff;
+	color: white;
 	text-decoration: none;
 }
+.about{
+	font-size: 20px;
+	font-family: Sans-serif;
 
+}
 /* foooter */
 
 footer {
-	margin-top: 45px;
+	margin-top: 80%;
 	padding-top: 5px;
 	border-top: 1px solid #eaeaea;
 	color:  green;
@@ -190,7 +232,7 @@ footer ul li {
 	clear: both;
 	float: left;
 	width: 100%;
-	margin-top: 45px;
+	margin-top: 85px;
 	@include box_sizing;
 }
 
@@ -205,7 +247,7 @@ footer ul li {
 
 .table-striped{
 	// border:  6px solid;
-	margin-top: 3cm;
+	margin-top: 0.5cm;
 }
 
 // .navbar .navbar-fixed-top {

@@ -5,15 +5,14 @@
 				  <!-- <div id="user-widget"> -->
 				  <nav>
 				  <ul class="nav pull-right">
-						<li><%= link_to "Home", restaurants_path %> </li>
+						<li><%= link_to "Home", search_path %> </li>
 						<li><%= link_to "Help", '#' %> </li>
 						<li><%= link_to "Sign in", new_user_path %> </li>
 					</ul>	
-				</nav>
-  </div>
-
-  <div class="fbook">
+					<div class="fbook">
     <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+  </div>
+				</nav>
   </div>
 
 
@@ -21,3 +20,6 @@
 			</div>
 	</div>			
 </header>
+
+
+

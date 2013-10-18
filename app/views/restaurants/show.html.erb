@@ -6,36 +6,33 @@
 
 
 
+ 
   <thead>
     <tr>
       <th>Name</th>
       <th>Address</th>
-      <th>city</th>
-      <th>province</th>
-      <th>country</th>
-      <th>Description</th>
-      <th>Open time</th>
-      <th>Close time</th>
-      <th>Longitude</th>
-      <th>Latitude</th>
+      <th>Phone Number</th>
+      <th>Open for</th>
     </tr>
   </thead>
 
   <tbody>
-      <tr>
-        <td><%= @restaurant.name %></td>
-        <td><%= @restaurant.address %></td>
-        <td><%= @restaurant.city %></td>
-        <td><%= @restaurant.province %></td>
-        <td><%= @restaurant.country %></td>
-        <td><%= @restaurant.description %></td>
-        <td><%= @restaurant.open_time %></td>
-        <td><%= @restaurant.close_time %></td>   
-        <td><%= @restaurant.longitude %></td>
-        <td><%= @restaurant.latitude %> </td>
-
+    <tr>
+      <td><%= @response["name"] %></td>
+      <td>
+        <% @response["location"]["display_address"].each do |x| %>
+          <span>
+            <%= x %>
+          </span><br>
+        <% end %>
+      </td>
+      <td>
+        <span class="phone">
+          <%= @response["phone"] %>
+        </span><br>
+      </td>
+    </tr>      
   </tbody>
-
 </table>
 
 <div>
@@ -47,4 +44,5 @@
 </div>
 </div>
 
- <%= gmaps(:map_options => {:detect_location => true, :center_on_user => true, :auto_zoom => false, :zoom => 16, :auto_adjust => true}, :markers => {:data => @json} ) %>
+ <%= gmaps(:map_options => {:detect_location => true, :center_on_user => false, :auto_zoom => false, :zoom => 16, :auto_adjust => true}, :markers => {:data => [@coordinates["geometry"]["location"]].to_json } ) %>
+

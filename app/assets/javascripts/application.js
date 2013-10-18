@@ -14,3 +14,44 @@
 //= require jquery_ujs
 
 //= require_tree .
+
+$(document).ready(function(){
+	$(".time").click(function(){
+		location.reload();
+		$(this).css({
+			"color": "orange"
+		});
+	});
+
+	// $(".searchbtn").click(function(){
+	// 	navigator.geolocation.getCurrentPosition(function(position) {
+	//   	var longitude = position.coords.longitude;
+	//   	var latitude = position.coords.latitude;
+
+	//   	$.get(
+	//   		'/findrest',
+	//   		{latitude: latitude, longitude: longitude},
+	//   		function( data ) {
+	//   			console.log('I got a response!');
+	//   			console.log(data);
+	//   		}
+	//   	)
+	//   })
+	//   return false; 
+	// });
+
+});
+
+     // var time = new Date().getTime();
+     // $(document.body).bind("mousemove keypress", function(e) {
+     //     time = new Date().getTime();
+     // });
+
+     // function refresh() {
+     //     if(new Date().getTime() - time >= 60000) 
+     //         window.location.reload(true);
+     //     else 
+     //         setTimeout(refresh, 10000);
+     // }
+
+     // setTimeout(refresh, 10000);

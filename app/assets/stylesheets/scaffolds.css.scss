@@ -4,6 +4,12 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  background: url(/assets/foodnow.jpg);
+    // width: 500px;
+  // height: 250px;
+  // background: url(/assets/foodnow.jpg) repeat;
+  background-size: 190%;
+  background-position: 50% 50%;
 }
 
 p, ol, ul, td {
